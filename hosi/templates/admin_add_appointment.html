@@ -1,0 +1,37 @@
+{% extends 'admin_base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+
+<!-- Add Appointment Page -->
+<form method="post">
+  {% csrf_token %}
+  <div class="container my-5">
+    <!-- Title Section -->
+    <div class="card">
+      <div class="card-header bg-primary text-white text-center">
+        <h5 class="mb-0">Book Appointment Details</h5>
+      </div>
+      <div class="card-body">
+        <!-- Form Content -->
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              {% render_field appointmentForm.description class="form-control" placeholder="Description" %}
+            </div>
+            <div class="form-group">
+              {% render_field appointmentForm.doctorId class="form-control" placeholder="Doctor" %}
+            </div>
+            <div class="form-group">
+              {% render_field appointmentForm.patientId class="form-control" placeholder="Patient" %}
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-3">
+          <button type="submit" class="btn btn-primary btn-lg">Book</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+{% endblock content %}

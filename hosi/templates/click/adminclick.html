@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}Admin Options{% endblock %}
+{% block content %}
+<div class="text-center">
+    <h2>Admin Login / Signup</h2>
+    <a href="{% url 'adminlogin' %}" class="btn btn-primary">Login</a>
+    <a href="{% url 'adminsignup' %}" class="btn btn-secondary">Signup</a>
+</div>
+{% endblock %}

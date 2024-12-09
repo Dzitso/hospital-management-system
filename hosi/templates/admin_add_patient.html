@@ -1,0 +1,60 @@
+{% extends 'admin_base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+
+<!-- Admit Patient Form -->
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="container my-5">
+    <!-- Header Section -->
+    <div class="card">
+      <div class="card-header bg-primary text-white text-center">
+        <h5 class="mb-0">Admit Patient to Hospital</h5>
+      </div>
+      <div class="card-body">
+        <!-- Form Content -->
+        <div class="row">
+          <!-- Left Column -->
+          <div class="col-md-6">
+            <div class="form-group">
+              {% render_field userForm.first_name class="form-control" placeholder="First Name" %}
+            </div>
+            <div class="form-group">
+              {% render_field userForm.username class="form-control" placeholder="Username" %}
+            </div>
+            <div class="form-group">
+              {% render_field patientForm.address class="form-control" placeholder="Address" %}
+            </div>
+            <div class="form-group">
+              {% render_field patientForm.symptoms class="form-control" placeholder="Symptoms" %}
+            </div>
+            <div class="form-group">
+              {% render_field patientForm.profile_pic required="required" class="form-control" placeholder="Profile Picture" %}
+            </div>
+          </div>
+          <!-- Right Column -->
+          <div class="col-md-6">
+            <div class="form-group">
+              {% render_field userForm.last_name class="form-control" placeholder="Last Name" %}
+            </div>
+            <div class="form-group">
+              {% render_field userForm.password class="form-control" placeholder="Password" %}
+            </div>
+            <div class="form-group">
+              {% render_field patientForm.mobile class="form-control" placeholder="Mobile" %}
+            </div>
+            <div class="form-group">
+              {% render_field patientForm.assignedDoctorId class="form-control" placeholder="Doctor" %}
+            </div>
+          </div>
+        </div>
+        <!-- Submit Button -->
+        <div class="text-center mt-4">
+          <button type="submit" class="btn btn-primary btn-lg">Admit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+{% endblock content %}

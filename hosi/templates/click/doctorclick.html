@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}Doctor Options{% endblock %}
+{% block content %}
+<div class="text-center">
+    <h2>Doctor Login / Signup</h2>
+    <a href="{% url 'doctorlogin' %}" class="btn btn-primary">Login</a>
+    <a href="{% url 'doctorsignup' %}" class="btn btn-secondary">Signup</a>
+</div>
+{% endblock %}
